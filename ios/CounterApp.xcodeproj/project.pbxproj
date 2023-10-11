@@ -12,8 +12,11 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		54B149952ACE8E1E00B56998 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B149942ACE8E1E00B56998 /* Counter.swift */; };
-		54B149972ACE8F0400B56998 /* Counter.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B149962ACE8F0400B56998 /* Counter.m */; };
+		5471C1E82ACED9DB005F4DFA /* AdSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5471C1E72ACED9DB005F4DFA /* AdSampleView.swift */; };
+		5471C1EA2ACEDB8B005F4DFA /* AdViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5471C1E92ACEDB8B005F4DFA /* AdViewManager.swift */; };
+		5471C1EC2ACEDBBA005F4DFA /* AdViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5471C1EB2ACEDBBA005F4DFA /* AdViewManager.m */; };
+		5471C1EE2ACEEAB0005F4DFA /* HcpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5471C1ED2ACEEAB0005F4DFA /* HcpManager.m */; };
+		5471C1F02ACEEAC1005F4DFA /* HcpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5471C1EF2ACEEAC1005F4DFA /* HcpManager.swift */; };
 		7699B88040F8A987B510C191 /* libPods-CounterApp-CounterAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-CounterApp-CounterAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -40,9 +43,12 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = CounterApp/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-CounterApp-CounterAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CounterApp-CounterAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-CounterApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CounterApp.debug.xcconfig"; path = "Target Support Files/Pods-CounterApp/Pods-CounterApp.debug.xcconfig"; sourceTree = "<group>"; };
+		5471C1E72ACED9DB005F4DFA /* AdSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdSampleView.swift; sourceTree = "<group>"; };
+		5471C1E92ACEDB8B005F4DFA /* AdViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViewManager.swift; sourceTree = "<group>"; };
+		5471C1EB2ACEDBBA005F4DFA /* AdViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdViewManager.m; sourceTree = "<group>"; };
+		5471C1ED2ACEEAB0005F4DFA /* HcpManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HcpManager.m; sourceTree = "<group>"; };
+		5471C1EF2ACEEAC1005F4DFA /* HcpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HcpManager.swift; sourceTree = "<group>"; };
 		54B149932ACE8E1E00B56998 /* CounterApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CounterApp-Bridging-Header.h"; sourceTree = "<group>"; };
-		54B149942ACE8E1E00B56998 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
-		54B149962ACE8F0400B56998 /* Counter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Counter.m; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-CounterApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CounterApp.release.xcconfig"; path = "Target Support Files/Pods-CounterApp/Pods-CounterApp.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-CounterApp-CounterAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CounterApp-CounterAppTests.debug.xcconfig"; path = "Target Support Files/Pods-CounterApp-CounterAppTests/Pods-CounterApp-CounterAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-CounterApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CounterApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,9 +103,12 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				54B149942ACE8E1E00B56998 /* Counter.swift */,
-				54B149962ACE8F0400B56998 /* Counter.m */,
 				54B149932ACE8E1E00B56998 /* CounterApp-Bridging-Header.h */,
+				5471C1EF2ACEEAC1005F4DFA /* HcpManager.swift */,
+				5471C1ED2ACEEAB0005F4DFA /* HcpManager.m */,
+				5471C1E92ACEDB8B005F4DFA /* AdViewManager.swift */,
+				5471C1EB2ACEDBBA005F4DFA /* AdViewManager.m */,
+				5471C1E72ACED9DB005F4DFA /* AdSampleView.swift */,
 			);
 			name = CounterApp;
 			sourceTree = "<group>";
@@ -420,10 +429,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54B149972ACE8F0400B56998 /* Counter.m in Sources */,
+				5471C1F02ACEEAC1005F4DFA /* HcpManager.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				5471C1EA2ACEDB8B005F4DFA /* AdViewManager.swift in Sources */,
+				5471C1EC2ACEDBBA005F4DFA /* AdViewManager.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				54B149952ACE8E1E00B56998 /* Counter.swift in Sources */,
+				5471C1EE2ACEEAB0005F4DFA /* HcpManager.m in Sources */,
+				5471C1E82ACED9DB005F4DFA /* AdSampleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

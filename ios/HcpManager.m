@@ -1,8 +1,6 @@
-//
-//  HcpManager.m
-//  CounterApp
-//
-//  Created by Muqeem Ahmad on 05/10/23.
-//
 
-#import <Foundation/Foundation.h>
+#import "React/RCTBridgeModule.h"
+@interface RCT_EXTERN_MODULE(HcpManager, NSObject)
+RCT_EXTERN_METHOD(sendAppKey)
+RCT_EXTERN_METHOD(sendHcpProfile)
+@end

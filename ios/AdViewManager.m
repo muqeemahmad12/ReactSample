@@ -1,8 +1,4 @@
-//
-//  AdViewManager.m
-//  CounterApp
-//
-//  Created by Muqeem Ahmad on 05/10/23.
-//
 
-#import <Foundation/Foundation.h>
+#import "React/RCTViewManager.h"
+@interface RCT_EXTERN_MODULE(AdViewManager, RCTViewManager)
+@end

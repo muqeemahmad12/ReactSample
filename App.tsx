@@ -5,21 +5,10 @@
  * @format
  */
 
-import Counter from "./Counter"
-
-Counter.addListener(
-  "onIncrement",
-  res => console.log("event onIncrement", res)
-)
-Counter.increment()
-Counter.decrement()
-Counter.decrement()
-
-
 
 import { 
-	NativeModules,
-	NativeEventEmitter 
+	requireNativeComponent,
+	NativeModules
 } from 'react-native'
 
 import React from 'react';
@@ -47,33 +36,15 @@ type SectionProps = PropsWithChildren<{
 }>;
 
 
-// instantiate the event emitter
-const CounterEvents = new NativeEventEmitter(NativeModules.Counter)
-// subscribe to event
-CounterEvents.addListener(
-  "onIncrement",
-  res => console.log("onIncrement event", res)
-)
 
+// send app key
+NativeModules.HcpManager.sendAppKey()
 
+// send hcp profile
+NativeModules.HcpManager.sendHcpProfile()
 
-// Expose swift callback
-NativeModules.Counter.getCount((first, ...others) => {
-  console.log("count is ", first)
-  console.log("other arguments ", others)
-})
-
-// Expose swift promises
-NativeModules.Counter.increment()
-// create a function that wraps the Promise
-function decrement() {
-  NativeModules.Counter.decrement()
-    .then(res => console.log(res))
-    .catch(e => console.log(e.message, e.code))
-}
-decrement()
-decrement()
-
+// Initialise native view
+const AdView = requireNativeComponent("AdView")
 
 
 function Section({children, title}: SectionProps): JSX.Element {
@@ -109,20 +80,11 @@ function App(): JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+
+
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
+      <ScrollView>
+        <View style={styles.container}>
           <Section title="Step One">
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
             screen and then come back to see your edits.
@@ -137,29 +99,25 @@ function App(): JSX.Element {
             Read the docs to discover what to do next:
           </Section>
           <LearnMoreLinks />
+	<AdView style={{height: 100, backgroundColor: 'blue'}}/>
         </View>
-      </ScrollView>
-    </SafeAreaView>
+ </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  container: {
+    flex: 1, alignItems: "stretch"
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+  wrapper: {
+    flex: 1, alignItems: "center", justifyContent: "center"
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+  border: {
+    borderColor: "#eee", borderBottomWidth: 1
   },
-  highlight: {
-    fontWeight: '700',
-  },
+  button: {
+    fontSize: 50, color: "orange"
+  }
 });
 
 export default App;
